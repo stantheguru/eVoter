@@ -1,0 +1,46 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@model IEnumerable<Candidate>
+@{
+    ViewData["Title"] = "Candidates";
+}
+
+<div class="text-center">
+    <h2 class="display-6">Vote Now</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Candidate ID</th>
+                <th scope="col">First Name</th>
+                 <th scope="col">Last Name</th>
+                <th scope="col">Votes</th>
+                <th scope="col">Vote</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var obj in Model){
+            <tr>
+                <th scope="row">@obj.CandidateID</th>
+                <td>@obj.FirstName</td>
+                <td>@obj.LastName</td>
+              
+                 <td>@obj.Votes</td>
+
+                <td>
+                    <form asp-action="Vote" asp-controller="Candidate">
+                            <input hidden name="username" value=@UserManager.GetUserName(User)>
+                    <button type="submit" class="btn btn-primary">Vote</button>
+                    </form>
+                    
+                </td>
+               
+            </tr>
+            
+            }
+        </tbody>
+    </table>
+</div>
