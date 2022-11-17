@@ -38,7 +38,7 @@ namespace eVoter.Controllers
             string c_id = Request.Form["candidate_id"];
             int votes = 0;
 
-            string connectionString = "Server=DESKTOP-OI49JN6;Database=eVoter;Trusted_Connection=True;";  // typically, you get this from a config file
+            string connectionString = "Server=DESKTOP-OFRUC79;Database=eVoter;Trusted_Connection=True;";  // typically, you get this from a config file
             string query = "UPDATE dbo.AspNetUsers SET vote_status = 1 WHERE Id='"+id+"';";
 
             string sqlCurrentVotes = "select votes from dbo.Candidates  WHERE CandidateID='" + c_id + "';";

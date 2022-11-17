@@ -22,13 +22,13 @@ namespace eVoter.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
-        private Session _session;
+       
 
         public LoginModel(SignInManager<IdentityUser> signInManager, ILogger<LoginModel> logger)
         {
             _signInManager = signInManager;
             _logger = logger;
-            this._session = session;
+            
         }
 
         /// <summary>
@@ -69,17 +69,7 @@ namespace eVoter.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [EmailAddress]
-            public string Email
-            {
-                get
-                {
-                    return Email;
-                }
-                set
-                {
-
-                }
-            }
+            public string Email { get; set; }
 
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
@@ -128,7 +118,8 @@ namespace eVoter.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrl);
+                   
+                    return LocalRedirect(returnUrl); 
                 }
                 if (result.RequiresTwoFactor)
                 {

@@ -2,11 +2,41 @@
 
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
+@using Microsoft.Data.SqlClient;
 
 @model IEnumerable<Candidate>
 @{
     ViewData["Title"] = "Candidates";
+    int status = 0;
+    string id = UserManager.GetUserId(User);
+
+
+    string connectionString = "Server=DESKTOP-OFRUC79;Database=eVoter;Trusted_Connection=True;";  // typically, you get this from a config file
+
+    string sqlCurrentVotes = "select vote_status from dbo.AspNetUsers  WHERE Id='" + id + "';";
+    SqlConnection conn = new SqlConnection(connectionString);
+
+    SqlCommand sqlCommandCurrentVotes = new SqlCommand(sqlCurrentVotes, conn);
+
+
+    {
+        // open connection, execute query, close connection
+        conn.Open();
+        SqlDataReader reader = sqlCommandCurrentVotes.ExecuteReader();
+
+        while (reader.Read())
+        {
+            
+            if(reader[0].GetType()!=typeof(DBNull)){
+                status = (int)reader[0];
+            }
+            
+        }
+    }
+
 }
+
+
 
 <div class="text-center">
     <h2 class="display-6">Vote Now</h2>
@@ -34,7 +64,7 @@
                     <form asp-action="Vote" asp-controller="Candidate">
                             <input hidden name="user_id" value=@UserManager.GetUserId(User)>
                             <input hidden name="candidate_id" value=@obj.CandidateID>
-                            <input  value=@User.FindFirst("FirstName")>
+                            <input  value=@status>
 
                     <button type="submit" class="btn btn-primary">Vote</button>
                     </form>

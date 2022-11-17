@@ -10317,19 +10317,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Travelport\\.nuget\\packages\\": {}
+    "C:\\Users\\Nzuki\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Travelport\\Desktop\\csharp\\eVoter\\eVoter.csproj",
+      "projectUniqueName": "E:\\Projects\\sharp\\eVoter\\eVoter.csproj",
       "projectName": "eVoter",
-      "projectPath": "C:\\Users\\Travelport\\Desktop\\csharp\\eVoter\\eVoter.csproj",
-      "packagesPath": "C:\\Users\\Travelport\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Travelport\\Desktop\\csharp\\eVoter\\obj\\",
+      "projectPath": "E:\\Projects\\sharp\\eVoter\\eVoter.csproj",
+      "packagesPath": "C:\\Users\\Nzuki\\.nuget\\packages\\",
+      "outputPath": "E:\\Projects\\sharp\\eVoter\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Travelport\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nzuki\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10407,7 +10407,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   },
