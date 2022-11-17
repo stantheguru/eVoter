@@ -270,3 +270,5 @@ C:\Users\Travelport\Desktop\csharp\eVoter\bin\Debug\net6.0\runtimes\win\lib\net6
 C:\Users\Travelport\Desktop\csharp\eVoter\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Travelport\Desktop\csharp\eVoter\obj\Debug\net6.0\eVoter.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Travelport\Desktop\csharp\eVoter\obj\Debug\net6.0\eVoter.csproj.CopyComplete
+C:\Users\Travelport\Desktop\csharp\eVoter\bin\Debug\net6.0\WebMatrix.Data.dll
+C:\Users\Travelport\Desktop\csharp\eVoter\bin\Debug\net6.0\WebMatrix.WebData.dll

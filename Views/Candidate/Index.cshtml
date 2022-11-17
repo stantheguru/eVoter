@@ -32,7 +32,10 @@
 
                 <td>
                     <form asp-action="Vote" asp-controller="Candidate">
-                            <input hidden name="username" value=@UserManager.GetUserName(User)>
+                            <input hidden name="user_id" value=@UserManager.GetUserId(User)>
+                            <input hidden name="candidate_id" value=@obj.CandidateID>
+                            <input  value=@User.FindFirst("FirstName")>
+
                     <button type="submit" class="btn btn-primary">Vote</button>
                     </form>
                     

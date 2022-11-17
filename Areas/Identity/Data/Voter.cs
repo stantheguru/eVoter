@@ -14,6 +14,8 @@ namespace eVoter.Areas.Identity.Data
 
         public int vote_status { get; set; }
 
+        
+
         public static explicit operator Voter(Task<IdentityUser> v)
         {
             throw new NotImplementedException();

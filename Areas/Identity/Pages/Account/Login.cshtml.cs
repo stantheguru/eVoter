@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using System.Web;
 
 namespace eVoter.Areas.Identity.Pages.Account
 {
@@ -21,11 +22,13 @@ namespace eVoter.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        private Session _session;
 
         public LoginModel(SignInManager<IdentityUser> signInManager, ILogger<LoginModel> logger)
         {
             _signInManager = signInManager;
             _logger = logger;
+            this._session = session;
         }
 
         /// <summary>
@@ -66,7 +69,17 @@ namespace eVoter.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [EmailAddress]
-            public string Email { get; set; }
+            public string Email
+            {
+                get
+                {
+                    return Email;
+                }
+                set
+                {
+
+                }
+            }
 
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
