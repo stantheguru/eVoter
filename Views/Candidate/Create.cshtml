@@ -1,0 +1,42 @@
+﻿@model Candidate
+
+<form method="post" asp-controller="Candidate" asp-action="Save" enctype="multipart/form-data">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Add Candidate</h2>
+			<hr/>
+		</div>
+		<div asp-validation-summary="All"></div>
+		<div class="mb-3">
+			<label asp-for="FirstName">FirstName</label>
+			<input asp-for="FirstName" class="form-control" />
+			<span asp-validation-for="FirstName" class="text-danger"></span>
+		</div>
+
+		<div class="mb-3">
+			<label asp-for="LastName">LastName</label>
+			<input asp-for="LastName" class="form-control" />
+			<span asp-validation-for="LastName" class="text-danger"></span>
+		</div>
+
+		<div class="mb-3">
+			<label asp-for="Avatar">Avatar</label>
+			<input accept="image/*" type="file"  name="photo" class="form-control" />
+			<span asp-validation-for="Avatar" class="text-danger"></span>
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:150px">Submit</button>
+		<a asp-action="Index" asp-controller="Category" class="btn btn-secondary" style="width:150px">
+			Back To Categories
+		</a>
+
+
+	</div>
+
+</form>
+@section scripts{
+	@{
+		<partial name="_ValidationScriptsPartial"/>
+
+
+	}
+}

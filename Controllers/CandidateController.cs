@@ -15,9 +15,7 @@ namespace eVoter.Controllers
     public class CandidateController : Controller
     {
         private readonly eVoterContext _db;
-        UserManager<IdentityUser> UserManager;
-        SignInManager<IdentityUser> SignInManager;
-
+        
 
 
         public CandidateController(eVoterContext db)
@@ -26,7 +24,7 @@ namespace eVoter.Controllers
         }
         public IActionResult Index()
         {
-            IEnumerable<Candidate> candidates = _db.Candidates;
+            IEnumerable<Candidate> candidates = _db.Candidates.OrderByDescending(c => c.Votes);
             return View(candidates);
         }
 
@@ -82,6 +80,42 @@ namespace eVoter.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Create()
+        {
 
+            return View();
+        }
+
+
+        public async Task<IActionResult> Save(Candidate postNin, IFormFile photo)
+        {
+            if (photo != null && photo.Length > 0)
+            {
+                var fileName = Path.GetFileName(photo.FileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
+                var file_name = "/images/" + fileName;
+                postNin.Avatar = file_name;
+                postNin.Votes = 0;
+                _db.Candidates.Add(postNin);
+                _db.SaveChanges();
+                using (var fileSrteam = new FileStream(filePath, FileMode.Create))
+                {
+                    await photo.CopyToAsync(fileSrteam);
+                    TempData["success"] = "Candidate Saved successfully";
+                    return RedirectToAction("Index");
+
+                }
+
+            }
+            else
+            {
+                TempData["error"] = "Please select an avatar";
+                return RedirectToAction("Create");
+            }
+
+        }
     }
+
+
 }
+

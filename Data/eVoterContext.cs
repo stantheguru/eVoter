@@ -6,8 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace eVoter.Data;
-public class CustomUserRole : IdentityUserRole<string> { }
-public class eVoterContext : IdentityDbContext
+public class eVoterContext : IdentityDbContext<ApplicationUser>
 {
     public eVoterContext(DbContextOptions<eVoterContext> options)
         : base(options)
@@ -25,9 +24,9 @@ public class eVoterContext : IdentityDbContext
     }
 }
 
-public class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<Voter>
+public class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<ApplicationUser>
 {
-    public void Configure(EntityTypeBuilder<Voter> builder)
+    public void Configure(EntityTypeBuilder<ApplicationUser> builder)
     {
         builder.Property(u => u.FirstName).HasMaxLength(255);
         builder.Property(u => u.LastName).HasMaxLength(255);

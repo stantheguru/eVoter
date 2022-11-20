@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rS3xPzcqEkUHbZpdTB95T9Nb95TUAx/BD0StJzi+itA=",
+  "Hash": "He8chm8O1rOT66poDPkEQVSq+ZeQvxrJzMbR7LYCQ0E=",
   "Source": "eVoter",
   "BasePath": "_content/eVoter",
   "Mode": "Default",
@@ -1103,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "E:\\Projects\\sharp\\eVoter\\wwwroot\\images\\tuboda.png",
+      "SourceId": "eVoter",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Projects\\sharp\\eVoter\\wwwroot\\",
+      "BasePath": "_content/eVoter",
+      "RelativePath": "images/tuboda.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\tuboda.png"
     },
     {
       "Identity": "E:\\Projects\\sharp\\eVoter\\wwwroot\\js\\init.js",

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace eVoter.Areas.Identity.Data
 {
-    public class Voter:IdentityUser
+    public class ApplicationUser:IdentityUser
     {
       
         public string FirstName { get; set; }
@@ -16,9 +16,6 @@ namespace eVoter.Areas.Identity.Data
 
         
 
-        public static explicit operator Voter(Task<IdentityUser> v)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
